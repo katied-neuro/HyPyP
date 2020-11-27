@@ -1,0 +1,955 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.5.14" name="generator"/>
+<title>Statistics - HyPyP Docs</title>
+<link href="../../assets/stylesheets/main.d3202873.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+<link href="../../custom.css" rel="stylesheet"/>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#hypyp.stats">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="HyPyP Docs" class="md-header-nav__button md-logo" href="../.." title="HyPyP Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            HyPyP Docs
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              Statistics
+            
+          </span>
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="HyPyP Docs" class="md-nav__button md-logo" href="../.." title="HyPyP Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    HyPyP Docs
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../.." title="Home">
+      Home
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<label class="md-nav__link" for="nav-2">
+      API
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="API" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-2">
+<span class="md-nav__icon md-icon"></span>
+        API
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../analyses/" title="Analyses">
+      Analyses
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../preprocessing/" title="Preprocessing">
+      Preprocessing
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Statistics
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./" title="Statistics">
+      Statistics
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats">
+    hypyp.stats
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.con_matrix">
+    con_matrix()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.metaconn_matrix">
+    metaconn_matrix()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.metaconn_matrix_2brains">
+    metaconn_matrix_2brains()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.statscluster">
+    statscluster()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.statsCond">
+    statsCond()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.statscondCluster">
+    statscondCluster()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../useful_tools/" title="Useful tools">
+      Useful tools
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../visualisation/" title="Visualisation">
+      Visualisation
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats">
+    hypyp.stats
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.con_matrix">
+    con_matrix()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.metaconn_matrix">
+    metaconn_matrix()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.metaconn_matrix_2brains">
+    metaconn_matrix_2brains()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.statscluster">
+    statscluster()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.statsCond">
+    statsCond()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypyp.stats.statscondCluster">
+    statscondCluster()
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<h1>Statistics</h1>
+<div class="doc doc-object doc-module">
+<h2 class="hidden-toc" href="#hypyp.stats" id="hypyp.stats" style="visibility: hidden; width: 0; height: 0;">
+</h2>
+<div class="doc doc-contents first">
+<p>Statistical functions</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>stats.py</td>
+</tr>
+<tr>
+<td>authors</td>
+<td>Florence Brun, Guillaume Dumas</td>
+</tr>
+<tr>
+<td>date</td>
+<td>2020-03-18</td>
+</tr>
+</tbody>
+</table>
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="hypyp.stats.con_matrix">
+<code class="highlight language-python">
+con_matrix<span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">freqs_mean</span><span class="p">,</span> <span class="n">draw</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Computes a priori channel connectivity across space and frequencies.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>epochs</code></td>
+<td><code>Epochs</code></td>
+<td>
+<p>one participant Epochs object; contains channel information.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>freqs_mean</code></td>
+<td><code>list</code></td>
+<td>
+<p>list of frequencies in frequency-band-of-interest used
+by MNE for power or coherence spectral density calculation.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>draw</code></td>
+<td><code>bool</code></td>
+<td>
+<p>option to plot the connectivity matrices, boolean.</p>
+</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tuple</code></td>
+<td>
+<p>ch_con, ch_con_freq:</p>
+<ul>
+<li>
+<p>ch_con: connectivity matrix between channels along space based on
+  their position, scipy.sparse.csr_matrix of shape
+  (n_channels, n_channels).</p>
+</li>
+<li>
+<p>ch_con_freq: connectivity matrix between channels along space and
+  frequencies, scipy.sparse.csr_matrix of shape
+  (n_channels<em>len(freqs_mean), n_channels</em>len(freqs_mean)).</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="hypyp.stats.metaconn_matrix">
+<code class="highlight language-python">
+metaconn_matrix<span class="p">(</span><span class="n">electrodes</span><span class="p">,</span> <span class="n">ch_con</span><span class="p">,</span> <span class="n">freqs_mean</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Computes a priori connectivity between pairs of sensors for which
+connectivity indices have been calculated, across space and frequencies
+(based on channel location).</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>electrodes</code></td>
+<td><code>list</code></td>
+<td>
+<p>electrode pairs for which connectivity has been computed,
+list of tuples with channel indices, see indices_connectivity
+intrabrain function in toolbox (analyses).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>ch_con</code></td>
+<td><code>csr_matrix</code></td>
+<td>
+<p>connectivity matrix between sensors along space based on their
+position, scipy.sparse.csr_matrix of shape (n_channels, n_channels).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>freqs_mean</code></td>
+<td><code>list</code></td>
+<td>
+<p>list of frequencies in the frequency-band-of-interest used
+by MNE for coherence spectral density calculation (connectivity indices).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tuple</code></td>
+<td>
+<p>metaconn, metaconn_freq:</p>
+<ul>
+<li>
+<p>metaconn: a priori connectivity based on channel location, between
+  pairs of channels for which connectivity indices have been calculated,
+  matrix of shape (len(electrodes), len(electrodes)).</p>
+</li>
+<li>
+<p>metaconn_freq: a priori connectivity between pairs of channels for which
+  connectivity indices have been calculated, across space and
+  frequencies, for merge data, matrix of shape
+  (len(electrodes)<em>len(freqs_mean), len(electrodes)</em>len(freqs_mean)).</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="hypyp.stats.metaconn_matrix_2brains">
+<code class="highlight language-python">
+metaconn_matrix_2brains<span class="p">(</span><span class="n">electrodes</span><span class="p">,</span> <span class="n">ch_con</span><span class="p">,</span> <span class="n">freqs_mean</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Computes a priori connectivity across space and frequencies
+between pairs of channels for which connectivity indices have
+been calculated, to merge data (2 brains).</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>electrodes</code></td>
+<td><code>list</code></td>
+<td>
+<p>electrode pairs for which connectivity indices have
+been computed, list of tuples with channels indexes, see
+indices_connectivity_interbrain function in toolbox (analyses).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>ch_con</code></td>
+<td><code>csr_matrix</code></td>
+<td>
+<p>connectivity matrix between channels along space based on their
+position, scipy.sparse.csr_matrix of shape (n_channels, n_channels).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>freqs_mean</code></td>
+<td><code>list</code></td>
+<td>
+<p>list of frequencies in the frequency-band-of-interest used
+by MNE for coherence spectral density calculation (connectivity indices).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>plot</code></td>
+<td><code>bool</code></td>
+<td>
+<p>option to plot the connectivity matrices, boolean.</p>
+</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is assumed that there was no a priori connectivity
+between channels from the two participants.</p>
+</div>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tuple</code></td>
+<td>
+<p>metaconn, metaconn_freq:</p>
+<ul>
+<li>
+<p>metaconn: a priori connectivity based on channel location, between
+  pairs of channels for which connectivity indices have been calculated,
+  to merge data, matrix of shape (len(electrodes), len(electrodes)).</p>
+</li>
+<li>
+<p>metaconn_freq: a priori connectivity between pairs of channels for which
+  connectivity indices have been calculated, across space and
+  frequencies, to merge data, matrix of shape
+  (len(electrodes)<em>len(freqs_mean), len(electrodes)</em>len(freqs_mean)).</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="hypyp.stats.statscluster">
+<code class="highlight language-python">
+statscluster<span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">factor_level</span><span class="p">,</span> <span class="n">ch_con_freq</span><span class="p">,</span> <span class="n">tail</span><span class="p">,</span> <span class="n">n_permutations</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Computes cluster-level statistical permutation test, corrected with
+channel connectivity across space and frequencies to compare groups
+or conditions for simple or multiple comparisons.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>list</code></td>
+<td>
+<p>values from different groups or conditions to compare,
+list of arrays (3d for time-frequency power or connectivity values),
+or np.array for f multiple-way ANOVA test. For this test and the 
+paired ttest, samples must have the same dimension.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>test</code></td>
+<td><code>str</code></td>
+<td>
+<p>nature of the test used to compare groups or conditions.
+Can be a t test for independant or paired samples
+('ind ttest' or 'rel ttest'), a one-way ANOVA test
+('f oneway'), or a multiple-way ANOVA test ('f multipleway), str.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>factor_level</code></td>
+<td><code>list</code></td>
+<td>
+<p>for multiple-way ANOVA test, describe the number of level
+for each factor, list (if compare 2 groups and 2 conditions,
+factor_levels = [2, 2] and data should be an np.array with
+group1-condition1, group1-condition2, group2-condition1,
+group2-condition2).
+Set to None otherwise.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>ch_con_freq</code></td>
+<td><code>csr_matrix</code></td>
+<td>
+<p>connectivity or metaconnectivity matrix for PSD or CSD
+values to assess a priori connectivity between channels across
+space and frequencies based on their position, bsr_matrix.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>tail</code></td>
+<td><code>int</code></td>
+<td>
+<p>direction of the ttest, can be set to 1, 0 or -1. The tail must
+be set to 0 for a one-way ANOVA test and to 1 for a mutiple-way
+ANOVA test.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>n_permutations</code></td>
+<td><code>int</code></td>
+<td>
+<p>number of permutations computed, can be set to 50000.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td><code>float</code></td>
+<td>
+<p>threshold to consider clusters significant, can be set to 0.05
+that is the default value. An adjustment is done for a f one-way and
+multiple-way tests to adapt 0.05 to the number of observations.</p>
+</td>
+<td><code>0.05</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition notes">
+<p class="admonition-title">Notes</p>
+<p>With t_power set to 1, each location is weighted by its statistical
+score in a cluster.
+For a f multipleway ANOVA test with connectivity values, the last
+dimensions have to be flattened in a vector, instead of the shape
+(n_sensors, n_sensors), you can use np.reshape.</p>
+</div>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tuple</code></td>
+<td>
+<p>F_obs, clusters, cluster_pv, H0, F_obs_plot:</p>
+<ul>
+<li>
+<p>F_obs: statistic (T or F values according to the assignement
+  of 'test') observed for all variables,
+  array of shape (n_tests,).</p>
+</li>
+<li>
+<p>clusters: boolean array with same shape as the input data,
+  True values indicating locations that are part of a cluster, array.</p>
+</li>
+<li>
+<p>cluster_p_values: p-value for each cluster, array.</p>
+</li>
+<li>
+<p>H0: max cluster level stats observed under permutation, array of
+  shape (n_permutations,).</p>
+</li>
+<li>
+<p>F_obs_plot: statistical values above alpha threshold,
+  to plot significant sensors (see plot_significant_sensors
+  function in the toolbox) array of shape (n_tests,).</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="hypyp.stats.statsCond">
+<code class="highlight language-python">
+statsCond<span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">n_permutations</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Computes statistical t test on participant measure (e.g. PSD) for a condition.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>ndarray</code></td>
+<td>
+<p>array of participants measure (e.g. PSD) for
+a condition (n_samples, n_tests, nfreq: n_tests the channels).
+Values will be averaged on nfreq for statistics.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>epochs</code></td>
+<td><code>Epochs</code></td>
+<td>
+<p>Epochs object for a condition from a random participant, only
+used to get parameters from the info (sampling frequencies for example).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>n_permutations</code></td>
+<td><code>int</code></td>
+<td>
+<p>the number of permutations, int. Should be at least 2*n
+sample, can be set to 50000 for example.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td><code>float</code></td>
+<td>
+<p>the threshold for ttest, float, can be set to 0.05.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This ttest calculates if the observed mean significantly deviates
+from 0; it does not compare two periods, but one period with the null
+hypothesis. Randomized data are generated with random sign flips.
+The tail is set to 0 by default (= the alternative hypothesis is that
+the data mean is different from 0).
+To reduce false positive due to multiple comparisons, False Discovery Rate
+(FDR) correction is applied to the p values.
+Note that the frequency dimension is reduced to one for the test
+(average in the frequency band-of-interest).
+To take frequencies into account, use cluster statistics
+(see statscondCluster function in the toolbox).
+For visualization, use plot_significant_sensors function in the toolbox.</p>
+</div>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tuple</code></td>
+<td>
+<p>T_obs, p_values, H0, adj_p, T_obs_plot:
+- T_obs: T-statistic observed for all variables, array of shape (n_tests).</p>
+<ul>
+<li>
+<p>p_values: p-values for all the tests, array of shape (n_tests).</p>
+</li>
+<li>
+<p>H0: T-statistic obtained by permutations and t-max trick for multiple
+  comparisons, array of shape (n_permutations).</p>
+</li>
+<li>
+<p>adj_p: adjusted p values from FDR correction, array of shape
+  (n_tests, n_tests), with boolean assessment for p values
+  and p values corrected.</p>
+</li>
+<li>
+<p>T_obs_plot: statistical values to plot, from sensors above alpha threshold,
+  array of shape (n_tests,).</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="hypyp.stats.statscondCluster">
+<code class="highlight language-python">
+statscondCluster<span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">freqs_mean</span><span class="p">,</span> <span class="n">ch_con_freq</span><span class="p">,</span> <span class="n">tail</span><span class="p">,</span> <span class="n">n_permutations</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Computes cluster-level statistical permutation test, corrected with
+channel connectivity across space and frequencies.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>list</code></td>
+<td>
+<p>values from different conditions or different groups to compare,
+list of arrays (3d for time-frequency power or connectivity values).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>freqs_mean</code></td>
+<td><code>list</code></td>
+<td>
+<p>frequencies in frequency-band-of-interest used by MNE
+for PSD or CSD calculation, list.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>ch_con_freq</code></td>
+<td><code>csr_matrix</code></td>
+<td>
+<p>connectivity or metaconnectivity matrix for PSD or CSD
+values to assess a priori connectivity between channels across
+space and frequencies based on their position, bsr_matrix.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>tail</code></td>
+<td><code>int</code></td>
+<td>
+<p>direction of the ttest, can be set to 1, 0 or -1.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>n_permutations</code></td>
+<td><code>int</code></td>
+<td>
+<p>number of permutations computed, can be set to 50000.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td><code>float</code></td>
+<td>
+<p>threshold to consider clusters significant, can be set to 0.05
+or less.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tuple</code></td>
+<td>
+<p>F_obs, clusters, cluster_pv, H0, F_obs_plot:</p>
+<ul>
+<li>
+<p>F_obs: statistic (F by default) observed for all variables,
+  array of shape (n_tests,).</p>
+</li>
+<li>
+<p>clusters: boolean array with same shape as the input data, 
+  True values indicating locations that are part of a cluster, array.</p>
+</li>
+<li>
+<p>cluster_p_values: p-value for each cluster, array.</p>
+</li>
+<li>
+<p>H0: max cluster level stats observed under permutation, array of
+  shape (n_permutations,).</p>
+</li>
+<li>
+<p>F_obs_plot: statistical values above alpha threshold, to plot
+  significant sensors (see plot_significant_sensors function in the toolbox)
+  array of shape (n_tests,).</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../preprocessing/" rel="prev" title="Preprocessing">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Preprocessing
+              </div>
+</div>
+</a>
+<a class="md-footer-nav__link md-footer-nav__link--next" href="../useful_tools/" rel="next" title="Useful tools">
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Useful tools
+              </div>
+</div>
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+<script src="../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+</body>
+</html>
